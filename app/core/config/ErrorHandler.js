@@ -1,8 +1,8 @@
 let ErrorHandler = /*@ngInject*/ ($httpProvider, $stateProvider, $urlRouterProvider) => {
-    // Globalna obsługa błędu 401 - koniec sesji.
+    // Global 401 handler - end session.
     $httpProvider.interceptors.push(($q, $window, $document) => {
         return {
-            // TODO: Ogarnąć jak będzie usługa.
+            // TODO: Handle this if will be service.
             // 'responseError': (rejection) => {
             //     if (rejection.status === 401) {
             //         // Usunięcie ciasteczka sesji.

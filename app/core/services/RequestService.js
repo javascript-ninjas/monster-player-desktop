@@ -19,8 +19,8 @@ class RequestService {
 
     ask(name, data = {}) {
         let url = this.getUrl(name);
-
         let request = this.$http({ url, method: 'post', data });
+        
         return request;
     }
 

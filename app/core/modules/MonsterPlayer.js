@@ -17,15 +17,18 @@ import SidebarDirective from './../directives/sidebar/Sidebar';
 
 // Module dependencies
 let moduleName = 'MonsterPlayer';
-let moduleDependencies = ['ui.router', 'ngMaterial'];
+let moduleDependencies = ['ui.router', 'ngMaterial', 'ngAnimate'];
 
 // Attach module
 angular.module(moduleName, moduleDependencies)
     .controller('AppController', AppController)
+
     .directive('mpUserbar', UserbarDirective)
     .directive('mpSidebar', SidebarDirective)
+
     .service('SessionService', SessionService)
     .service('RequestService', RequestService)
+
     .config(Theme)
     .config(Router)
     .config(ErrorHandler)

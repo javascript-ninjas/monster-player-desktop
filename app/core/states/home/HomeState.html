@@ -3,10 +3,10 @@
 
     <div layout="column" flex class="content-wrapper" id="primary-col">
         <md-content layout="column" flex class="md-padding">
-            <h2>{{ user.firstName + ' ' + user.lastName }}</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h2>{{ user.name }}</h2>
+            <p>{{ user.email }}</p>
             <div class="cell">
-                <img ng-src="http://placehold.it/700x460" alt="image">
+                <img ng-src="{{ user.avatar }}" alt="image">
             </div>
         </md-content>
     </div>

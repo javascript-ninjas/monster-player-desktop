@@ -1,31 +1,9 @@
 <div layout="row" layout-align="center center">
     <md-card>
         <md-content layout-padding>
-            <form name="loginForm">
-                <md-input-container>
-                    <label>Login</label>
-                    <input name="login" ng-model="login" required md-maxlength="20" minlength="3">
-                    <div ng-messages="loginForm.lastName.$error" ng-show="loginForm.lastName.$dirty">
-                        <div ng-message="required">This is required!</div>
-                        <div ng-message="md-maxlength">That's too long!</div>
-                        <div ng-message="minlength">That's too short!</div>
-                    </div>
-                </md-input-container>
 
-                <md-input-container>
-                    <label>Hasło</label>
-                    <input name="password" type="password" ng-model="password" required md-maxlength="20" minlength="3">
-                    <div ng-messages="loginForm.lastName.$error" ng-show="loginForm.lastName.$dirty">
-                        <div ng-message="required">This is required!</div>
-                        <div ng-message="md-maxlength">That's too long!</div>
-                        <div ng-message="minlength">That's too short!</div>
-                    </div>
-                </md-input-container>
+            <ui-view name="session"></ui-view>
 
-                <div layout="row" layout-align="center center">
-                    <md-button class="md-raised md-primary">Zaloguj</md-button>
-                </div>
-            </form>
         </md-content>
     </md-card>
 </div>
