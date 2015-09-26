@@ -1,4 +1,4 @@
-let errorHandler = /*@ngInject*/ ($httpProvider, $stateProvider, $urlRouterProvider) => {
+let ErrorHandler = /*@ngInject*/ ($httpProvider, $stateProvider, $urlRouterProvider) => {
     // Globalna obsługa błędu 401 - koniec sesji.
     $httpProvider.interceptors.push(($q, $window, $document) => {
         return {
@@ -16,4 +16,4 @@ let errorHandler = /*@ngInject*/ ($httpProvider, $stateProvider, $urlRouterProvi
     })
 };
 
-export default errorHandler;
+export default ErrorHandler;

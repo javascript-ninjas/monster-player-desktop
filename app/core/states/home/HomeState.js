@@ -1,6 +1,6 @@
-import template from './homeState.html';
+import template from './HomeState.html';
 
-let homeState = {
+let HomeState = {
     name: 'home',
     state: {
         url: '/home',
@@ -12,4 +12,4 @@ let homeState = {
     }
 }
 
-export default homeState;
+export default HomeState;

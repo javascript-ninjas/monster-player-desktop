@@ -1,19 +1,20 @@
-class requestService {
+import ServerConfig from './../config/ServerConfig';
+
+class RequestService {
     protocol = 'http';
     host = 'localhost';
     port = '3000';
-    services = {
-        'signin': 'user/sign-in',
-        'signup': 'user/sign-up'
-    };
+    services = {};
 
     /*@ngInject*/
     constructor($http) {
         this.$http = $http;
 
-        this.protocol = 'http';
-        this.host = '172.16.110.205';
-        this.port = '3000';
+        // Setup server params.
+        this.protocol = ServerConfig.protocol;
+        this.host = ServerConfig.host;
+        this.port = ServerConfig.port;
+        this.services = ServerConfig.services;
     }
 
     ask(name, data = {}) {
@@ -39,4 +40,4 @@ class requestService {
     }
 }
 
-export default requestService;
+export default RequestService;

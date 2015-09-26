@@ -1,6 +1,6 @@
-import template from './userbar.html';
+import template from './Sidebar.html';
 
-let userbar = () => {
+let Sidebar = () => {
     return {
         restrict: 'E',
         replace: true,
@@ -8,4 +8,4 @@ let userbar = () => {
     }
 }
 
-export default userbar;
+export default Sidebar;

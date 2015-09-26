@@ -1,6 +1,6 @@
-import template from './sessionState.html'
+import template from './SessionState.html'
 
-let sessionState = {
+let SessionState = {
     name: 'session',
     state: {
         url: '/session',
@@ -12,4 +12,4 @@ let sessionState = {
     }
 }
 
-export default sessionState;
+export default SessionState;

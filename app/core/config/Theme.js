@@ -1,4 +1,4 @@
-let theme = /*@ngInject*/ ($mdThemingProvider, $mdIconProvider) => {
+let Theme = /*@ngInject*/ ($mdThemingProvider, $mdIconProvider) => {
    // Material - Icons
     $mdIconProvider
         .defaultIconSet("./assets/svg/avatars.svg", 128)
@@ -12,4 +12,4 @@ let theme = /*@ngInject*/ ($mdThemingProvider, $mdIconProvider) => {
     ;//END
 };
 
-export default theme;
+export default Theme;

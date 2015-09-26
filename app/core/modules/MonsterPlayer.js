@@ -1,17 +1,19 @@
-import appController from './controllers/appController';
 
 // Configs
-import theme from './config/theme';
-import router from './config/router';
-import errorHandler from './config/errorHandler';
+import Theme from './../config/Theme';
+import Router from './../config/Router';
+import ErrorHandler from './../config/ErrorHandler';
 
 // Services
-import sessionService from './services/sessionService';
-import requestService from './services/requestService';
+import SessionService from './../services/SessionService';
+import RequestService from './../services/RequestService';
+
+// Controllers
+import AppController from './../controllers/AppController';
 
 // Directives
-import userbarDirective from './directives/userbar/userbar';
-import sidebarDirective from './directives/sidebar/sidebar';
+import UserbarDirective from './../directives/userbar/Userbar';
+import SidebarDirective from './../directives/sidebar/Sidebar';
 
 // Module dependencies
 let moduleName = 'MonsterPlayer';
@@ -19,14 +21,14 @@ let moduleDependencies = ['ui.router', 'ngMaterial'];
 
 // Attach module
 angular.module(moduleName, moduleDependencies)
-    .controller('appController', appController)
-    .directive('mpUserbar', userbarDirective)
-    .directive('mpSidebar', sidebarDirective)
-    .service('sessionService', sessionService)
-    .service('requestService', requestService)
-    .config(theme)
-    .config(router)
-    .config(errorHandler)
+    .controller('AppController', AppController)
+    .directive('mpUserbar', UserbarDirective)
+    .directive('mpSidebar', SidebarDirective)
+    .service('SessionService', SessionService)
+    .service('RequestService', RequestService)
+    .config(Theme)
+    .config(Router)
+    .config(ErrorHandler)
 ;//END
 
 export default moduleName;

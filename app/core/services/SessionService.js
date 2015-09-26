@@ -1,9 +1,9 @@
-class sessionService {
+class SessionService {
     user = {};
     isUserLoggedIn = false;
 
     /*@ngInject*/
-    constructor($state, requestService) {
+    constructor($state, RequestService) {
         this.fetchUser();
 
         if (!this.isUserLoggedIn) {
@@ -11,6 +11,14 @@ class sessionService {
         } else {
             $state.go('home');
         }
+
+        RequestService.ask('signin', {
+            email: 'aaa',
+            password: 'bbb'
+        }).then(
+            (response) => { console.debug(response) },
+            (response) => { console.debug('#ERROR: ', response) }
+        );
     }
 
     fetchUser() {
@@ -23,4 +31,4 @@ class sessionService {
 
 };
 
-export default sessionService;
+export default SessionService;
