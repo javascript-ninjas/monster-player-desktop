@@ -1,0 +1,16 @@
+{
+  "name": "monster-player-desktop",
+  "version": "0.0.1",
+  "description": "Monster Player - Desktop",
+  "main": "main.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "run": "./node_modules/.bin/electron ."
+  },
+  "author": "javascript-ninjas",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-prebuilt": "^0.33"
+  }
+}
