@@ -1,15 +1,18 @@
+import EVENTS from './../events/events';
+
 class SessionService {
     user = {};
 
     /*@ngInject*/
-    constructor($state, RequestService) {
+    constructor($rootScope, $state, RequestService) {
         this.RequestService = RequestService;
         this.$state = $state;
+        this.$rootScope = $rootScope;
 
         if (this.user && this.user.login) {
-            $state.go('home');
+            $state.go('app.signin');
         } else {
-            $state.go('session.signin');
+            $state.go('app.home');
         }
     }
 
@@ -17,8 +20,8 @@ class SessionService {
         let successHandler = (response) => {
             if (response.data.status === 'success' && response.data.login) { 
                 // TODO: lack of service - pass user data.
-                this.setUser(authData);
-                this.$state.go('home');
+                this.setUser();
+                this.$state.go('app.home');
             }
         };
         // TODO: error handler.
@@ -30,8 +33,8 @@ class SessionService {
     signUp(authData) {
         let successHandler = (response) => { 
             if (response.data.status === 'success' && response.data.login) {
-                this.setUser(authData);
-                this.$state.go('home');
+                this.setUser();
+                this.$state.go('app.home');
             }
         };
         // TODO: error handler.
@@ -58,6 +61,8 @@ class SessionService {
                 }
             };
         }
+
+        this.$rootScope.$broadcast(EVENTS.REFRESH_AUTHDATA, authData);
     }
 
     getUser() {

@@ -1,11 +1,11 @@
 import template from './HomeState.html';
 
 let HomeState = {
-    name: 'home',
+    name: 'app.home',
     state: {
         url: '/home',
         views: {
-            'main': {
+            'main@': {
                 template
             }
         }

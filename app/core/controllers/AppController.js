@@ -1,9 +1,14 @@
+import EVENTS from './../events/events';
+
 class AppController {
     /*@ngInject*/
-    constructor($scope, SessionService) {
+    constructor($rootScope, $scope, SessionService) {
         $scope.applicationName = 'Monster Player';
         $scope.user = SessionService.getUser();
-        console.debug($scope.user);
+
+        $rootScope.$on(EVENTS.REFRESH_AUTHDATA, ($event, authData) => {
+            $scope.user = authData;
+        })
     }
 }
 

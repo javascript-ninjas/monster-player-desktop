@@ -12,7 +12,6 @@ class RegisterController {
             if (name && email && password && isMatched) {
                 SessionService.signUp({ name, email, password, password2 });
             }
-            
         };
 
     }

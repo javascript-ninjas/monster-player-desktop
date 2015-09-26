@@ -1,12 +1,11 @@
 import template from './SessionState.html';
 
 let SessionState = {
-    name: 'session',
+    name: 'app.session',
     state: {
+        abstract: true,
         views: {
-            'main': {
-                abstract: true,
-                url: '/session',
+            'session@': {
                 template
             }
         }

@@ -1,9 +1,13 @@
-<div layout="row" layout-align="center center">
-    <md-card>
-        <md-content layout-padding>
+<div layout="column" class="relative" layout-fill role="main">
+    <md-content flex md-scroll-y>
+        <div layout="row" layout-align="center center">
+            <md-card>
+                <md-content layout-padding>
 
-            <ui-view name="session"></ui-view>
+                    <ui-view name="session" layout="column" layout-fill layout-padding></ui-view>
 
-        </md-content>
-    </md-card>
+                </md-content>
+            </md-card>
+        </div>
+    </md-content>
 </div>

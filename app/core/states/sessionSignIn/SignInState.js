@@ -2,9 +2,9 @@ import template from './SignInState.html';
 import controller from './SignInController';
 
 let SignInState = {
-    name: 'session.signin',
+    name: 'app.signin',
     state: {
-        url: '/session/signin',
+        url: '/signin',
         views: {
             'session': {
                 template,
