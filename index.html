@@ -10,7 +10,7 @@
 
     <body>
 
-        <mp-userbar></mp-userbar>
+        <mp-userbar ng-if="user.isLoggedIn"></mp-userbar>
         
         <ui-view name="main"></ui-view>
 

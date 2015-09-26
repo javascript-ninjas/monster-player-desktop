@@ -1,5 +1,5 @@
-import homeState from './../states/home/home.js';
-import sessionState from './../states/session/session.js';
+import homeState from './../states/home/homeState.js';
+import sessionState from './../states/session/sessionState.js';
 
 let router = /*@ngInject*/ ($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/home');

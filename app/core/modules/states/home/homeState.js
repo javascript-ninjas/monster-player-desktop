@@ -1,15 +1,15 @@
-import template from './home.html';
+import template from './homeState.html';
 
-let state = {
+let homeState = {
     name: 'home',
     state: {
         url: '/home',
         views: {
             'main': {
-                template: template
+                template
             }
         }
     }
 }
 
-export default state;
+export default homeState;

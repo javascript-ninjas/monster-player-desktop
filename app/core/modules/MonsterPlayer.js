@@ -1,11 +1,16 @@
 import appController from './controllers/appController';
 
-import userbarDirective from './directives/userbar/userbar';
-import sidebarDirective from './directives/sidebar/sidebar';
-
+// Configs
 import theme from './config/theme';
 import router from './config/router';
 import errorHandler from './config/errorHandler';
+
+// Services
+import sessionService from './services/sessionService';
+
+// Directives
+import userbarDirective from './directives/userbar/userbar';
+import sidebarDirective from './directives/sidebar/sidebar';
 
 // Module dependencies
 let moduleName = 'MonsterPlayer';
@@ -16,6 +21,7 @@ angular.module(moduleName, moduleDependencies)
     .controller('appController', appController)
     .directive('mpUserbar', userbarDirective)
     .directive('mpSidebar', sidebarDirective)
+    .service('sessionService', sessionService)
     .config(theme)
     .config(router)
     .config(errorHandler)

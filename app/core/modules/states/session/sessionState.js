@@ -1,13 +1,15 @@
-let state = {
+import template from './sessionState.html'
+
+let sessionState = {
     name: 'session',
     state: {
         url: '/session',
         views: {
             'main': {
-                template: 'test'
+                template
             }
         }
     }
 }
 
-export default state;
+export default sessionState;

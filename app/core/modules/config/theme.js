@@ -8,10 +8,9 @@ let theme = /*@ngInject*/ ($mdThemingProvider, $mdIconProvider) => {
     let palettes = [
         'red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue',
         'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 
-        'amber', 'orange', 'deep-orange,', 'brown', 'grey', 'blue-grey'
+        'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'
     ];
     let palette = _.sample(palettes);
-
 
     $mdThemingProvider.theme('default')
         .primaryPalette(palette)

@@ -1,11 +1,8 @@
 class appController {
     /*@ngInject*/
-    constructor($scope) {
+    constructor($scope, sessionService) {
         $scope.applicationName = 'Monster Player';
-        $scope.user = {
-            firstName: 'Koń',
-            lastName: 'Rafał'
-        }
+        $scope.user = sessionService.user;
     }
 }
 
