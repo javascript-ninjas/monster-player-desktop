@@ -7,6 +7,7 @@ import errorHandler from './config/errorHandler';
 
 // Services
 import sessionService from './services/sessionService';
+import requestService from './services/requestService';
 
 // Directives
 import userbarDirective from './directives/userbar/userbar';
@@ -22,6 +23,7 @@ angular.module(moduleName, moduleDependencies)
     .directive('mpUserbar', userbarDirective)
     .directive('mpSidebar', sidebarDirective)
     .service('sessionService', sessionService)
+    .service('requestService', requestService)
     .config(theme)
     .config(router)
     .config(errorHandler)

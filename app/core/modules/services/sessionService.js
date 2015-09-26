@@ -3,7 +3,7 @@ class sessionService {
     isUserLoggedIn = false;
 
     /*@ngInject*/
-    constructor($state) {
+    constructor($state, requestService) {
         this.fetchUser();
 
         if (!this.isUserLoggedIn) {
