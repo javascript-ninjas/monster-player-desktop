@@ -1,15 +1,9 @@
-let router = /*@ngInject*/ ($stateProvider, $urlRouterProvider) => {
+import homeState from './../states/home/home.js';
 
+let router = /*@ngInject*/ ($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/');
     $stateProvider
-        .state('home', {
-            url: '/home',
-            views: {
-                'main': {
-                    template: 'test'
-                }
-            }
-        })
+        .state(homeState.name, homeState.state)
     ;//END
 };
 
