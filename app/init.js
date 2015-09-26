@@ -17,23 +17,35 @@ app.on('window-all-closed', function() {
     }
 });
 
+// TODO: move into separated config file.
+var CONFIG = {
+    window: {
+        width: 1200,
+        height: 800
+    },
+    indexPath: 'file://' + __dirname + '/../index.html',
+    openDevTools: true
+};
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({ width: 800, height: 600 });
+    mainWindow = new BrowserWindow(CONFIG.window);
 
     // and load the index.html of the app.
-    mainWindow.loadUrl('file://' + __dirname + '/index.html');
+    mainWindow.loadUrl(CONFIG.indexPath);
 
     // Open the DevTools.
-    mainWindow.openDevTools();
+    if (CONFIG.openDevTools) {
+        mainWindow.openDevTools();
+    }
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
+        // Dereference the window object, usually you would store windows
+        // in an array if your app supports multi windows, this is the time
+        // when you should delete the corresponding element.
+        mainWindow = null; 
     });
 });
