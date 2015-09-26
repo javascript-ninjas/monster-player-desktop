@@ -1,12 +1,10 @@
-import template from './home.html';
-
 let state = {
-    name: 'home',
+    name: 'session',
     state: {
-        url: '/home',
+        url: '/session',
         views: {
             'main': {
-                template: template
+                template: 'test'
             }
         }
     }
