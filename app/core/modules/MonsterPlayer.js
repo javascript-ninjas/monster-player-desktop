@@ -5,6 +5,7 @@ import sidebarDirective from './directives/sidebar/sidebar';
 
 import theme from './config/theme';
 import router from './config/router';
+import errorHandler from './config/errorHandler';
 
 // Module dependencies
 let moduleName = 'MonsterPlayer';
@@ -17,6 +18,7 @@ angular.module(moduleName, moduleDependencies)
     .directive('mpSidebar', sidebarDirective)
     .config(theme)
     .config(router)
+    .config(errorHandler)
 ;//END
 
 export default moduleName;

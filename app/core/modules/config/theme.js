@@ -5,9 +5,16 @@ let theme = /*@ngInject*/ ($mdThemingProvider, $mdIconProvider) => {
         .icon("menu", "http://placehold.it/24x24", 24)
     ;//END
 
-    // Material - Theme
+    let palettes = [
+        'red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue',
+        'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 
+        'amber', 'orange', 'deep-orange,', 'brown', 'grey', 'blue-grey'
+    ];
+    let palette = _.sample(palettes);
+
+
     $mdThemingProvider.theme('default')
-        .primaryPalette('green')
+        .primaryPalette(palette)
         .accentPalette('red')
     ;//END
 };
