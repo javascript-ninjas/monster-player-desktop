@@ -27,6 +27,10 @@ module.exports = {
                 test: /\.(htm|html)$/,
                 exclude: /node_modules/,
                 loader: 'raw-loader'
+            },
+            {
+                test: /\.scss$/,
+                loader: "style!css!sass"
             }
         ]
     },

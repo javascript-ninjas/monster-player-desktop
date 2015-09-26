@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html ng-controller="appController">
     <head>
         <meta charset="UTF-8">
 
-        <title>Mo-mo-mo-monster Player</title>
+        <title ng-bind="applicationName"></title>
+
+        <link href="app/vendors/angular-material/angular-material.min.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
-        <h1>#YOLO</h1>
-        We are using io.js <script>document.write(process.version)</script>
-        and Electron <script>document.write(process.versions['electron'])</script>.
 
+        <mp-userbar></mp-userbar>
+        
+        <ui-view name="main"></ui-view>
+
+        <div layout="row" flex class="content-wrapper">
+           <mp-sidebar></mp-sidebar>
+
+            <div layout="column" flex class="content-wrapper" id="primary-col">
+                <md-content layout="column" flex class="md-padding">
+                    <h2>{{ user.firstName + ' ' + user.lastName }}</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <div class="cell">
+                        <img ng-src="http://placehold.it/700x460" alt="image">
+                    </div>
+                </md-content>
+            </div>
+        </div>
+
+
+          
+
+        <script src="app/vendors/angular/angular.min.js"></script>
+        <script src="app/vendors/angular-ui-router/angular-ui-router.min.js"></script>
+        <script src="app/vendors/angular-aria/angular-aria.min.js"></script>
+        <script src="app/vendors/angular-animate/angular-animate.min.js"></script>
+        <script src="app/vendors/angular-material/angular-material.min.js"></script>
         <script src="dist/bundle.js"></script>
     </body>
 </html>
+
