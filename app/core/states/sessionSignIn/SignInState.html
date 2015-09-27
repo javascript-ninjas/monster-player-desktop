@@ -1,29 +1,42 @@
-<form name="loginForm">
-    <md-content>
-        <h1>Logowanie</h1>
+<div layout="column" class="relative" layout-fill role="main">
+    <md-content flex md-scroll-y>
+        <div layout="row" layout-align="center center">
+            <md-card>
+                <md-content layout-padding>
 
-        <md-input-container>
-            <label>Email</label>
-            <input name="email" ng-model="email" required md-maxlength="20" minlength="3">
-            <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
-                <div ng-message="required">This is required!</div>
-                <div ng-message="md-maxlength">That's too long!</div>
-                <div ng-message="minlength">That's too short!</div>
-            </div>
-        </md-input-container>
+                    <form name="loginForm">
+                        <md-content>
+                            <h1>Logowanie</h1>
 
-        <md-input-container>
-            <label>Hasło</label>
-            <input name="password" type="password" ng-model="password" required md-maxlength="20">
-            <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
-                <div ng-message="required">This is required!</div>
-                <div ng-message="md-maxlength">That's too long!</div>
-            </div>
-        </md-input-container>
+                            <md-input-container>
+                                <label>Email</label>
+                                <input name="email" ng-model="email" required md-maxlength="20" minlength="3">
+                                <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+                                    <div ng-message="required">This is required!</div>
+                                    <div ng-message="md-maxlength">That's too long!</div>
+                                    <div ng-message="minlength">That's too short!</div>
+                                </div>
+                            </md-input-container>
 
-        <div class="md-actions" layout="row" layout-align="center center">
-            <a class="md-button" ui-sref="session.register">Rejestruj</a>
-            <md-button ng-click="signIn()" class="md-raised md-primary">Zaloguj</md-button>
+                            <md-input-container>
+                                <label>Hasło</label>
+                                <input name="password" type="password" ng-model="password" required md-maxlength="20">
+                                <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+                                    <div ng-message="required">This is required!</div>
+                                    <div ng-message="md-maxlength">That's too long!</div>
+                                </div>
+                            </md-input-container>
+
+                            <div class="md-actions" layout="row" layout-align="center center">
+                                <a class="md-button" ui-sref="register">Rejestruj</a>
+                                <md-button ng-click="signIn()" class="md-raised md-primary">Zaloguj</md-button>
+                            </div>
+                        </md-content>
+                    </form>
+
+                </md-content>
+            </md-card>
         </div>
     </md-content>
-</form>
+</div>
+

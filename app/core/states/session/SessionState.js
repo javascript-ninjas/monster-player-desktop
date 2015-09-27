@@ -1,11 +1,11 @@
 import template from './SessionState.html';
 
 let SessionState = {
-    name: 'app.session',
+    name: 'session',
     state: {
-        abstract: true,
+    	abstract: true,
         views: {
-            'session@': {
+            'app': {
                 template
             }
         }

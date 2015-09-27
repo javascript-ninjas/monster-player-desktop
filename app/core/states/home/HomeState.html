@@ -1,11 +1,46 @@
 <div layout="row" flex class="content-wrapper">
     <div layout="column" flex class="content-wrapper" id="primary-col">
         <md-content layout="column" flex class="md-padding">
-            <h2>{{ user.name }}</h2>
-            <p>{{ user.email }}</p>
-            <div class="cell">
-                <img ng-src="{{ user.avatar }}" alt="image">
-            </div>
+           
+
+			<md-card flex-gt-sm="90" flex-gt-md="80">
+				<md-card-content>
+					<h2>Activity</h2>
+					<md-list>
+						<md-item ng-repeat="item in activity | filter:search">
+							<md-item-content>
+								<div class="md-tile-left inset" hide-sm>
+									<img ng-src="{{ user.avatar }}" class="face" alt="">
+								</div>
+								<div class="md-tile-content">
+									<h3>{{ item.name }}</h3>
+									<h4>{{ item.email }}</h4>
+
+									<p>
+										{{item.notes}}
+									</p>
+								</div>
+							</md-item-content>
+							<md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+							<md-divider hide-gt-sm ng-if="!$last"></md-divider>
+						</md-item>
+						<md-divider></md-divider>
+
+						<md-item layout class="inset">
+							<md-button layout layout-align="start center" flex class="md-primary">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
+							</md-button>
+						</md-item>
+					</md-list>
+				</md-card-content>
+			</md-card>
+
+
+
+           
         </md-content>
     </div>
 </div>
+
+
+

@@ -3,7 +3,7 @@ import template from './AppState.html';
 let AppState = {
     name: 'app',
     state: {
-        abstract: true,
+    	url: '/',
         views: {
             'app': {
                 template

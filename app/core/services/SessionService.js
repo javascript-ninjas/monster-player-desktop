@@ -10,17 +10,17 @@ class SessionService {
         this.$rootScope = $rootScope;
 
         if (this.user && this.user.login) {
-            $state.go('app.signin');
-        } else {
             $state.go('app.home');
+        } else {
+            $state.go('signin');
         }
     }
 
     signIn(authData) {
         let successHandler = (response) => {
             if (response.data.status === 'success' && response.data.login) { 
-                // TODO: lack of service - pass user data.
-                this.setUser();
+                this.setUser(authData);
+                //this.setUser();
                 this.$state.go('app.home');
             }
         };
@@ -33,7 +33,8 @@ class SessionService {
     signUp(authData) {
         let successHandler = (response) => { 
             if (response.data.status === 'success' && response.data.login) {
-                this.setUser();
+                this.setUser(authData);
+                //this.setUser();
                 this.$state.go('app.home');
             }
         };
@@ -49,16 +50,12 @@ class SessionService {
         } else {
             // MOCK
             this.user = {
-                "status": "success",
-                "login": true,
-                "user": {
-                    "_id": "5606e30b3f3601ec0514fcd7",
-                    "name": "rendfall",
-                    "email": "rendfall@gmail.com",
-                    "password": "dwa",
-                    "avatar": "http://placehold.it/32x32",
-                    "token": "ff166d597646843d935dab9042fc0375"
-                }
+                "_id": "5606e30b3f3601ec0514fcd7",
+                "name": "rendfall",
+                "email": "rendfall@gmail.com",
+                "password": "dwa",
+                "avatar": "http://placehold.it/32x32",
+                "token": "ff166d597646843d935dab9042fc0375"
             };
         }
 

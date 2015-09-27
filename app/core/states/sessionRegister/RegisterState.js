@@ -2,11 +2,11 @@ import template from './RegisterState.html';
 import controller from './RegisterController';
 
 let RegisterState = {
-    name: 'app.register',
+    name: 'register',
     state: {
         url: '/register',
         views: {
-            'session': {
+            'app': {
                 template,
                 controller
             }

@@ -32,6 +32,17 @@ angular.module(moduleName, moduleDependencies)
     .config(Theme)
     .config(Router)
     .config(ErrorHandler)
+
+    .run(['$rootScope', '$state', 'SessionService', function ($rootScope, $state, SessionService) {
+    	$rootScope.$on("$stateChangeStart", (event, toState, toParams, fromState, fromParams) => {
+    		let user = SessionService.getUser();
+
+            if (user && user.login) {
+                $state.go('signin');
+                event.preventDefault();
+            }
+        });
+    }]);
 ;//END
 
 export default moduleName;
