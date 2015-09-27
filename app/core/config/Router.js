@@ -1,7 +1,7 @@
 import AppState from './../states/app/AppState.js';
 import HomeState from './../states/home/HomeState.js';
-import RegisterState from './../states/sessionRegister/RegisterState.js';
-import SignInState from './../states/sessionSignIn/SignInState.js';
+import RegisterState from './../states/register/RegisterState.js';
+import SignInState from './../states/signIn/SignInState.js';
 
 let Router = /*@ngInject*/ ($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/home');
