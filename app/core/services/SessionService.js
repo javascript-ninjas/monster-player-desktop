@@ -8,8 +8,8 @@ class SessionService {
         this.RequestService = RequestService;
         this.$state = $state;
         this.$rootScope = $rootScope;
-
-        if (this.user && this.user.login) {
+this.setUser();
+        if (this.user && this.user.name) {
             $state.go('app.home');
         } else {
             $state.go('signin');
@@ -20,7 +20,6 @@ class SessionService {
         let successHandler = (response) => {
             if (response.data.status === 'success' && response.data.login) { 
                 this.setUser(authData);
-                //this.setUser();
                 this.$state.go('app.home');
             }
         };
@@ -34,7 +33,6 @@ class SessionService {
         let successHandler = (response) => { 
             if (response.data.status === 'success' && response.data.login) {
                 this.setUser(authData);
-                //this.setUser();
                 this.$state.go('app.home');
             }
         };

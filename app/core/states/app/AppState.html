@@ -1,18 +1,24 @@
-<div layout="row">
-    <div layout="column">
-        <mp-sidebar></mp-sidebar>
-    </div>
+<mp-sidebar></mp-sidebar>
 
-    <div layout="column" class="relative" layout-fill role="main">
+<div 
+    layout="column" 
+    class="relative" 
+    layout-fill 
+    role="main"
+><!--div-->
+    <mp-userbar></mp-userbar>
 
-        <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
-            <ng-md-icon icon="add"></ng-md-icon>
-        </md-button>
-
-        <mp-userbar></mp-userbar>
-
-        <md-content flex md-scroll-y>
-            <ui-view name="main" layout="column" layout-fill layout-padding></ui-view>
-        </md-content>
-    </div>
+    <md-content 
+        style="background-color:#eee"
+        flex 
+        md-scroll-y 
+    ><!--md-content-->
+        <ui-view 
+            name="main"
+            layout="column" 
+            layout-fill 
+            layout-padding
+        ></ui-view>
+    </md-content>
 </div>
+

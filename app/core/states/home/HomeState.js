@@ -5,7 +5,7 @@ let HomeState = {
     state: {
         url: '/home',
         views: {
-            'main@': {
+            'main@app': {
                 template
             }
         }
